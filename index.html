@@ -1,381 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Form</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container" id = "Final_Result">
-        <form action=" " class="questionnaire-form" >
-            <h2>Identifying Suicidal Tendency</h2>
-            <div class="question">
-                <label>1. How many hours do you sleep every day (আপনি দৈনিক কত ঘন্টা ঘুমান)?
-                </label>
-                <div class="option">
-                    <label>
-                        <input type="radio" name="question1" value="6hour" required onclick="fun1()" id="result">
-                        ( < 6 ) hour
-                    </label>
-                    <label>
-                        <input type="radio" name="question1" value="no">
-                        ( 6 - 8 ) hour
-                    </label>
-                    <label>
-                        <input type="radio" name="question1" value="yes">
-                        ( 8 - 10 ) hour
-                    </label>
-                    <label>
-                        <input type="radio" name="question1" value="10hour"  onclick="fun1()" id="result">
-                        ( 10 < ) hour
-                    </label>
-                </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identifying Suicidal Tendency</title>
+    <link rel="shortcut icon" href="/image/logo.png" />
+    <!-- font awesome cdn link  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <!-- header section starts  -->
+
+    <header class="header">
+        <a href="#">
+      <img src="/image/logo.png" alt style="height: 50px; width: 50px" /></a>
+
+      <nav class="navbar">
+        <a href="#">home</a>
+        <a href="/test.html">test</a>
+        <a href="#about">about</a>
+        <a href="#supervisor">supervisor</a>
+        <a href="#adviser">adviser</a>
+        <a href="#team">team</a>
+      </nav>
+
+      <div id="menu-btn" class="fas fa-bars"></div>
+    </header>
+
+    <!-- header section ends -->
+
+    <!-- home section starts  -->
+
+    <h1 class="heading">Identifying <span>Suicidal</span> Tendency</h1>
+
+    <section class="home" id="home">
+      <!-- 
+        <div class="image">
+            <img src="/image/logo.png" alt="">
+        </div> -->
+
+      <div class="content">
+        <h3>Don't be sad😞 enjoy your life.😊</h3>
+        <p>
+          Every person's life path is thorny, not smooth. There are
+          disappointments, ups and downs and setbacks. Bad times can come in
+          life. Don't forget that day comes after night. Patience and self-love
+          are required. But many of them broke down due to one failure after
+          another and eventually chose suicide due to mental pain. Suicide is a
+          mental illness. This disease destroys a person before a certain period
+          of his life. Those who commit suicide have the mindset that they might
+          have survived if they ended their lives by committing suicide. The
+          thing is not like that.
+        </p>
+        <a href="/test.html" class="btn" style="float: center">
+          Test Your Suicidal Tendency <span class="fas fa-chevron-right"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- home section ends -->
+
+
+    <!-- about section starts  -->
+
+    <section class="about" id="about">
+
+        <h1 class="heading"> <span>about</span> us </h1>
+
+        <div class="row">
+
+            <div class="image">
+                <img src="/image/team.jpg" alt="">
             </div>
 
-            <div class="question">
-                <label>2. Are you satisfied with your results (আপনি কি আপনার ফলাফল নিয়ে সন্তুষ্ট)?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question3" value="yes" required>
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question3" value="Roughly">
-                        Roughly
-                    </label>
-                    <label>
-                        <input type="radio" name="question3" value="no" onclick="fun2()" id="result">
-                        No
-                    </label>
-                </div>
+            <div class="content">
+                <p class="text">We are final-year Bachelor of Science (B.Sc.) (Hons.) students in Information and Communication Technology (ICT) at the Institute of Information Technology, Jahangirnagar University, Savar, Dhaka-1342, Bangladesh.<br><br>
+                    The Institute began in 1987 to train individuals in computer-related skills. In 2009, it launched a bachelor's degree program in information technology with the clear goal of meeting the industry's cutting-edge demands.
+                    </span></p>
             </div>
 
-            <div class="question">
-                <label>3. Do you follow your religious precepts (আপনি কি আপনার ধর্মীয় অনুশাসন মেনে চলেন)?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question4" value="yes" required>
-                        Practicing
-                    </label>
-                    <label>
-                        <input type="radio" name="question4" value="no">
-                        Sometimes
-                    </label>
-                    <label>
-                        <input type="radio" name="question4" value="no" onclick="fun3()" id="result">
-                        Atheist
-                    </label>
-                </div>
-            </div>
+        </div>
 
-            <div class="question">
-                <label>4. Are there any problems in your personal life(আপনার কি ব্যক্তিগত জীবনে কোন ধরনের সমস্যা আছে )?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question5" value="yes" required onclick="fun4()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question5" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+    </section>
 
-            <div class="question">
-                <label>5. Are there any problems in your social life(আপনার কি সামাজিক জীবনে কোন ধরনের সমস্যা আছে )?
-                </label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question6" value="yes" required onclick="fun5()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question6" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+    <!-- about section ends -->
 
-            <div class="question">
-                <label>6. Are there any problems in your  family (আপনার কি পারিবারিক জীবনে কোন ধরনের সমস্যা আছে )?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question7" value="yes" required onclick="fun6()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question7" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
 
-            <div class="question">
-                <label>7. Have you ever attempted suicide in the past (আপনি কি অতীতে কখনো আত্মহত্যার চেষ্টা করেছেন)?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question8" value="yes" required onclick="fun7()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question8" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+    <!-- supervisor section starts  -->
 
-            <div class="question">
-                <label>8. Do you have a trusted friend with whom you share your feelings? (আপনার কি কোন বিশ্বস্ত বন্ধু আছে যার কাছে আপনি আপনার অনুভূতি শেয়ার করেন?)</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question9" value="yes" required>
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question9" value="no" onclick="fun8()" id="result">
-                        No
-                    </label>
-                </div>
-            </div>
+    <section class="card" id="supervisor">
 
-            <div class="question">
-                <label>9. Do you have any long-term illnesses (আপনার কি দীর্ঘমেয়াদি কোন অসুস্থতা আছে)?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question10" value="yes" required onclick="fun9()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question10" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+      <h1 class="heading">Our <span>Supervisor</span></h1>
 
-            <div class="question">
-                <label>10. Do you take any addictive substances (আপনি কি যেকোন নেশা জাতীয় দ্রব্য গ্রহণ করেন)?</label>
-                <div class="option">
-                    <label>
-                        <input type="radio" name="question11" value="Regularly" required onclick="fun10()" id="result">
-                        Regularly
-                    </label>
-                    <label>
-                        <input type="radio" name="question11" value="Sometimes" onclick="fun11()" id="result">
-                        Sometimes
-                    </label>
-                    <label>
-                        <input type="radio" name="question11" value="Dropped" onclick="fun12()" id="result">
-                        Dropped nowadays
-                    </label>
-                    <label>
-                        <input type="radio" name="question11" value="no">
-                        Never
-                    </label>
-                </div>
-            </div>
+      <div class="box-container">
+        <div class="box">
+          <img src="/image/Supervisor.jpg" alt="" />
+          <a href="https://juniv.edu/teachers/fahima#" target="_blank"
+            ><h3>Dr. Fahima Tabassum</h3></a
+          >
+          <span>Professor</span>
+          <div class="share">
+            <h4>Institute of Information Technology</h4>
+            <h4>Jahangirnagar University, Savar, Dhaka-1342, Bangladesh.</h4>
+            <h4>
+              Email: fahima@juniv.edu, fahima2322@gmail.com,
+              fahimareja@hotmail.com
+            </h4>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="question">
-                <label>11. How do you spend your free time (আপনার অবসর সময় কিভাবে অতিবাহিত করেন)?</label>
-                <div class="option">
-                    <label>
-                        <input type="checkbox" name="question12" value="Facebooking" onclick="fun13()" id="result">
-                        Facebooking
-                    </label>
-                    <label>
-                        <input type="checkbox" name="question12" value="Youtube" onclick="fun14()" id="result">
-                        Youtube
-                    </label>
-                    <label>
-                        <input type="checkbox" name="question12" value="Gaming" onclick="fun15()" id="result">
-                        Gaming
-                    </label>
-                    <label>
-                        <input type="checkbox" name="question12" value="no">
-                        Movies
-                    </label>
-                    <label>
-                        <input type="checkbox" name="question12" value="no">
-                        Reading Books
-                    </label>
-                    <label>
-                        <input type="checkbox" name="question12" value="no">
-                        Playing
-                    </label>
-                    <label>
-                        <input type="checkbox" name="question12" value="no">
-                        Gardening
-                    </label>
-                    <label>
-                        <input type="checkbox" name="question12" value="no">
-                        Sleeping
-                    </label>
-                    <label>
-                        <input type="checkbox" name="question12" value="no">
-                        Cooking
-                    </label>
-                </div>
-            </div>
+    <!-- supervisor section ends -->
 
-            <div class="question">
-                <label>12. How much time do you spend on social media (আপনি সামাজিক যোগাযোগ মাধ্যমে কতটুকু সময় দেন)?</label>
-                <div class="option">
-                    <label>
-                        <input type="radio" name="question13" value="yes" required>
-                        ( 0 - 3 ) hour
-                    </label>
-                    <label>
-                        <input type="radio" name="question13" value="no" onclick="fun16()" id="result">
-                        ( 4 - 6 ) hour
-                    </label>
-                    <label>
-                        <input type="radio" name="question13" value="no" onclick="fun17()" id="result">
-                        ( 7 - 10 ) hour
-                    </label>
-                    <label>
-                        <input type="radio" name="question13" value="no" onclick="fun18()" id="result">
-                        ( 11 - 15 ) hour
-                    </label>
-                </div>
-            </div>
+    <!-- adviser section starts  -->
 
-            <div class="question">
-                <label>13. Have you ever been physically, abused (আপনি কি কখনো শারীরিক নির্যাতনের শিকার হয়েছেন)?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question14" value="yes" required onclick="fun19()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question14" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+    <section class="card" id="adviser">
+      <h1 class="heading">our <span>adviser</span></h1>
 
-            <div class="question">
-                <label>14. Have you ever been  mentally  abused (আপনি কি কখনো  মানসিক  নির্যাতনের শিকার হয়েছেন)?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question15" value="yes" required onclick="fun20()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question15" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+      <div class="box-container">
+        <div class="box">
+          <img src="/image/adviser1.jpg" alt="" />
+          <h3>Ifrat Jahan</h3>
+          <span>Deputy Director (Psychology)</span>
+          <div class="share">
+            <h4>Email: ifrat214@gmail.com</h4>
+          </div>
+        </div>
 
-            <div class="question">
-                <label>15. Have you ever been  sexually abused (আপনি কি কখনো  যৌন নির্যাতনের শিকার হয়েছেন)?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question16" value="yes" required onclick="fun21()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question16" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+        <div class="box">
+          <img src="/image/adviser2.jpeg" alt="" />
+          <h3>Subhashish Kumar Chatterjee</h3>
+          <span>Deputy Director (Psychology)</span>
+          <div class="share">
+            <h4>Email: shuvo1801@gmail.com</h4>
+          </div>
+        </div>
 
-            <div class="question">
-                <label>16. Is there a history of suicide in your family (আপনার পরিবারে কি আত্মহত্যা করে মৃত্যুর কোন ইতিহাস আছে)?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question17" value="yes" required onclick="fun22()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question17" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+        <div class="box">
+          <img src="/image/adviser3.jpg" alt="" />
+          <a href="https://juniv.edu/teachers/hossainmm" target="_blank"
+            ><h3>Md. Moyazzem Hossain</h3></a
+          >
+          <span>Professor</span>
+          <div class="share">
+            <h4>Statistics and Data Science</h4>
+            <h4>Jahangirnagar University</h4>
+            <h4>Email: hossainmm@juniv.edu</h4>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="question">
-                <label>17. Do you have money problems (আপনার কি টাকা পয়সার সমস্যা আছে)?
-                </label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question18" value="yes" required onclick="fun23()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question18" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+    <!-- adviser section ends -->
 
-            <div class="question">
-                <label>18. Have you ever expressed your feelings of depression to someone (আপনি কি কখনো কারো কাছে আপনার হতাশার অনুভূতি প্রকাশ করেছেন)?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question19" value="yes" required>
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question19" value="no" onclick="fun24()" id="result">
-                        No
-                    </label>
-                </div>
-            </div>
+    <!-- team section starts  -->
 
-            <div class="question">
-                <label>19. Do you get angry easily (আপনি কি অল্পতেই রেগে যান)?
-                </label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question20" value="yes" required onclick="fun25()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question20" value="no">
-                        Sometimes
-                    </label>
-                    <label>
-                        <input type="radio" name="question20" value="no" onclick="fun26()" id="result">
-                        No
-                    </label>
-                </div>
-            </div>
+    <section class="card" id="team">
+      <h1 class="heading">our <span>team</span></h1>
 
-            <div class="question">
-                <label>20. Do you find yourself guilty of any wrongdoing? (আপনার কোন ভুল কাজের জন্য নিজেকে দোষী সাব্যস্ত করেন কি?)</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question21" value="yes" required onclick="fun27()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question21" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+      <div class="box-container">
+        <div class="box">
+          <img src="/image/member1.png" alt="" />
+          <h3>Nahidul Islam</h3>
+          <span>Student</span>
+          <div class="share">
+            <h4>Institute of Information Technology</h4>
+            <h4>Jahangirnagar University</h4>
+            <h4>Email: nahidrabby2001@gmail.com</h4>
+          </div>
+        </div>
 
-            <div class="question">
-                <label>21. Have you ever hurt yourself with a sharp weapon (কষ্ট পেলে কখনো কি ধারালো অস্ত্র দিয়ে নিজেকে আঘাত করেছেন)?</label>
-                <div class="options">
-                    <label>
-                        <input type="radio" name="question22" value="yes" required onclick="fun28()" id="result">
-                        Yes
-                    </label>
-                    <label>
-                        <input type="radio" name="question22" value="no">
-                        No
-                    </label>
-                </div>
-            </div>
+        <div class="box">
+          <img src="/image/member2.png" alt="" />
+          <h3>Md. Shakil Hossain</h3>
+          <span>Student</span>
+          <div class="share">
+            <h4>Institute of Information Technology</h4>
+            <h4>Jahangirnagar University</h4>
+            <h4>Email: hossain.stu2018@juniv.edu</h4>
+          </div>
+        </div>
 
-            <button type="submit" onclick="fun29()" id="sbmit-button">Submit</button>
-        </form>
-    </div>
+        <div class="box">
+          <img src="/image/member3.png" alt="" />
+          <h3>Md. Mahbubur Rahman</h3>
+          <span>Student</span>
+          <div class="share">
+            <h4>Institute of Information Technology</h4>
+            <h4>Jahangirnagar University</h4>
+            <h4>Email: jmfahim013@gmail.com</h4>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <script src="script.js"> </script>
-</body>
+    <!-- team section ends -->
+
+    <!-- footer section starts  -->
+
+    <section class="footer">
+      <div class="box-container">
+        <div class="box">
+          <h3>contact info</h3>
+          <a href="#"> <i class="fas fa-phone"></i> +8801783810559 </a>
+          <a href="#"> <i class="fas fa-phone"></i> +8801796963444 </a>
+          <a href="#"> <i class="fas fa-phone"></i> +8801318813865 </a>
+          <a href="#">
+            <i class="fas fa-envelope"></i> hossain.stu2018@juniv.edu
+          </a>
+          <a href="#">
+            <i class="fas fa-map-marker-alt"></i> Institute of Information
+            Technology, Jahangirnagar University, Savar, Dhaka-1342, Bangladesh.
+          </a>
+        </div>
+
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#"> <i class="fas fa-chevron-right"></i> home </a>
+            <a href="test.html"> <i class="fas fa-chevron-right"></i> test </a>
+            <a href="#about"> <i class="fas fa-chevron-right"></i> about </a>
+            <a href="#supervisor"> <i class="fas fa-chevron-right"></i> supervisor </a>
+            <a href="#adviser"> <i class="fas fa-chevron-right"></i> adviser </a>
+            <a href="#team"> <i class="fas fa-chevron-right"></i> team </a>
+          </div>
+      </div>
+
+      <div class="credit">
+        <p>
+          &copy2024 All right Reversed. created by
+          <a
+            class="text-green ml-2"
+            href="https://sites.google.com/view/shakiliitju/home"
+            target="_blank"
+            >Md. Shakil Hossain</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- footer section ends -->
+
+    <!-- custom js file link  -->
+    <script src="script.js"></script>
+  </body>
 </html>
