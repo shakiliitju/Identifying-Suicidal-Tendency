@@ -14,7 +14,6 @@
     margin:0; padding: 0;
     box-sizing: border-box;
     outline: none; border: none;
-    text-transform: capitalize;
     transition: all .2s ease-out;
     text-decoration: none;
 }
@@ -35,7 +34,7 @@ section:nth-child(even){
 }
 
 .heading{
-    padding-top: 10rem;
+    padding-top: 7rem;
     text-align: center;
     text-shadow: var(--text-shadow);
     text-transform: uppercase;
@@ -83,7 +82,7 @@ section:nth-child(even){
 }
 
 .header{
-    padding:2rem 9%;
+    padding:2rem 10%;
     position: fixed;
     top:0; left: 0; right: 0;
     z-index: 1000;
@@ -114,7 +113,7 @@ section:nth-child(even){
 .header .navbar a:hover{
     color: white;
     padding: 5px;
-    background-color: #8CD2AB;
+    background-color: #f00a0ae5;
     border-radius: 20%;
     font-weight: 700;
 }
@@ -175,19 +174,6 @@ section:nth-child(even){
     text-align: justify;
 }
 
-
-
-.moreText{
-    display: none;
-}
-
-.read-more-btn{
-    outline: none;
-}
-
-.text.show-more .moreText{
-    display: inline;
-}
 
 .about .row{
     display: flex;
