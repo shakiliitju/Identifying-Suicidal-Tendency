@@ -37,6 +37,13 @@ body {
     text-align: center;
 }
 
+.questionnaire-form h3 {
+    margin-bottom: 20px;
+    font-size: 17px;
+    text-align: center;
+    color: #f00a0ae5;
+}
+
 .question {
     margin-bottom: 20px;
 }
@@ -82,6 +89,6 @@ body {
 }
 
 .questionnaire-form button:hover {
-    background-color: #218838;
+    background-color: #f00a0ae5;
 
 }
