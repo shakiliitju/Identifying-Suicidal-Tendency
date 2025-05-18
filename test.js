@@ -270,7 +270,7 @@ button:hover {
     <th>Comment</th>
   </tr>
   <tr>
-    <td> < 40 </td>
+    <td> <= 40 </td>
     <td>No Risk</td>
   </tr>
   <tr>
