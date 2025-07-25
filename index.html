@@ -6,6 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Identifying Suicidal Tendency</title>
     <link rel="shortcut icon" href="./image/logo.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#f00a0ae5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Suicidal Tendency Test" />
+    <link rel="apple-touch-icon" href="./image/logo.png" />
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="./image/logo.png" />
+    <meta name="msapplication-TileColor" content="#f00a0ae5" />
+    
     <!-- font awesome cdn link  -->
     <link
       rel="stylesheet"
@@ -14,6 +29,7 @@
 
     <!-- custom css file link  -->
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="pwa-styles.css" />
   </head>
 
   <body>
@@ -257,5 +273,72 @@
 
     <!-- custom js file link  -->
     <script src="script.js"></script>
+    
+    <!-- PWA Service Worker Registration -->
+    <script>
+      // Register service worker for PWA functionality
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('./sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+
+      // PWA Install Prompt
+      let deferredPrompt;
+      const installButton = document.createElement('button');
+      installButton.textContent = 'Install App';
+      installButton.className = 'btn install-btn';
+      installButton.style.display = 'none';
+      installButton.style.position = 'fixed';
+      installButton.style.bottom = '20px';
+      installButton.style.right = '20px';
+      installButton.style.zIndex = '1001';
+      installButton.style.backgroundColor = '#f00a0ae5';
+      installButton.style.color = 'white';
+      installButton.style.border = 'none';
+      installButton.style.padding = '10px 15px';
+      installButton.style.borderRadius = '5px';
+      installButton.style.fontSize = '14px';
+      
+      window.addEventListener('beforeinstallprompt', (e) => {
+        // Prevent Chrome 67 and earlier from automatically showing the prompt
+        e.preventDefault();
+        // Stash the event so it can be triggered later.
+        deferredPrompt = e;
+        // Show install button
+        installButton.style.display = 'block';
+        document.body.appendChild(installButton);
+      });
+
+      installButton.addEventListener('click', (e) => {
+        // Hide install button
+        installButton.style.display = 'none';
+        // Show the prompt
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          // Wait for the user to respond to the prompt
+          deferredPrompt.userChoice.then((choiceResult) => {
+            if (choiceResult.outcome === 'accepted') {
+              console.log('User accepted the A2HS prompt');
+            } else {
+              console.log('User dismissed the A2HS prompt');
+            }
+            deferredPrompt = null;
+          });
+        }
+      });
+
+      // Check if app is already installed
+      window.addEventListener('appinstalled', (evt) => {
+        console.log('App was installed.');
+        installButton.style.display = 'none';
+      });
+    </script>
   </body>
 </html>

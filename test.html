@@ -5,7 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Form</title>
     <link rel="shortcut icon" href="./image/logo.png" />
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="./manifest.json" />
+    
+    <!-- PWA Meta Tags -->
+    <meta name="theme-color" content="#f00a0ae5" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content="Suicidal Tendency Test" />
+    <link rel="apple-touch-icon" href="./image/logo.png" />
+    
     <link rel="stylesheet" href="test.css">
+    <link rel="stylesheet" href="pwa-styles.css">
 </head>
 <body>
     <div class="container" id = "Final_Result">
@@ -382,5 +394,80 @@
     </div>
 
     <script src="test.js"> </script>
+    
+    <!-- PWA Offline Support -->
+    <script>
+      // Register service worker
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('./sw.js');
+      }
+
+      // Offline detection
+      function updateOnlineStatus() {
+        const condition = navigator.onLine ? 'online' : 'offline';
+        const offlineIndicator = document.querySelector('.offline-indicator') || createOfflineIndicator();
+        
+        if (condition === 'offline') {
+          offlineIndicator.classList.add('show');
+        } else {
+          offlineIndicator.classList.remove('show');
+        }
+      }
+
+      function createOfflineIndicator() {
+        const indicator = document.createElement('div');
+        indicator.className = 'offline-indicator';
+        indicator.textContent = 'You are currently offline. Your test progress is saved locally.';
+        document.body.prepend(indicator);
+        return indicator;
+      }
+
+      window.addEventListener('online', updateOnlineStatus);
+      window.addEventListener('offline', updateOnlineStatus);
+      updateOnlineStatus();
+
+      // Save test progress locally
+      function saveProgress() {
+        const formData = new FormData(document.querySelector('.questionnaire-form'));
+        const progress = {};
+        for (let [key, value] of formData.entries()) {
+          progress[key] = value;
+        }
+        localStorage.setItem('testProgress', JSON.stringify(progress));
+      }
+
+      // Load saved progress
+      function loadProgress() {
+        const saved = localStorage.getItem('testProgress');
+        if (saved) {
+          const progress = JSON.parse(saved);
+          Object.keys(progress).forEach(name => {
+            const input = document.querySelector(`input[name="${name}"][value="${progress[name]}"]`);
+            if (input) {
+              input.checked = true;
+            }
+          });
+        }
+      }
+
+      // Auto-save progress on form changes
+      document.addEventListener('DOMContentLoaded', () => {
+        loadProgress();
+        
+        const form = document.querySelector('.questionnaire-form');
+        if (form) {
+          form.addEventListener('change', saveProgress);
+        }
+      });
+
+      // Clear progress after successful submission
+      const originalFun29 = window.fun29;
+      window.fun29 = function() {
+        localStorage.removeItem('testProgress');
+        if (originalFun29) {
+          originalFun29();
+        }
+      };
+    </script>
 </body>
 </html>

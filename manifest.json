@@ -1,0 +1,55 @@
+{
+  "name": "Identifying Suicidal Tendency",
+  "short_name": "Suicidal Tendency Test",
+  "description": "A mental health assessment tool to identify suicidal tendencies through psychological evaluation",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#f00a0ae5",
+  "orientation": "portrait-primary",
+  "scope": "./",
+  "lang": "en",
+  "categories": ["health", "medical", "education"],
+  "icons": [
+    {
+      "src": "./image/logo.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./image/logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Take Assessment",
+      "short_name": "Test",
+      "description": "Start the suicidal tendency assessment",
+      "url": "./test.html",
+      "icons": [
+        {
+          "src": "./image/Question-mark.jpg",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "./Screenshot/Home.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "./Screenshot/Question_set.png",
+      "sizes": "540x720",
+      "type": "image/png",
+      "form_factor": "narrow"
+    }
+  ]
+}
